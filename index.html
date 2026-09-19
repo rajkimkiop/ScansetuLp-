@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ScanSetU LP Program | Learn by Demo</title>
+<meta name="description" content="ScanSetU Liquidity Provider program — learn the LP order flow through an interactive demo before applying.">
+<style>
+:root{--bg:#06101d;--bg2:#09182a;--card:#0d2035;--card2:#102842;--line:#1c3a58;--text:#eef7ff;--muted:#9db0c4;--blue:#2f8cff;--cyan:#34d9ff;--green:#25d79b;--purple:#8c6cff;--yellow:#ffc857;--danger:#ff7272;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 80% 0%,#103052 0,#06101d 34%),var(--bg);line-height:1.55}a{text-decoration:none;color:inherit}.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06)}header{position:sticky;top:0;z-index:20;background:rgba(6,16,29,.86);backdrop-filter:blur(15px)}.brand{font-weight:900;font-size:22px}.brand i{font-style:normal;color:var(--cyan)}.navlinks{display:flex;gap:24px;color:#b9c8d8;font-size:14px}.navlinks a:hover{color:white}.btn{border:0;border-radius:12px;padding:13px 18px;font-weight:800;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:8px;transition:.18s}.btn:hover{transform:translateY(-1px)}.primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#02101b}.ghost{background:#10263e;border:1px solid var(--line);color:white}
+.hero{padding:78px 0 62px}.heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}.badge{display:inline-flex;gap:7px;padding:7px 11px;border:1px solid rgba(37,215,155,.3);background:rgba(37,215,155,.08);border-radius:999px;color:#65e6ba;font-size:13px;font-weight:800}.hero h1{font-size:clamp(40px,6vw,68px);line-height:1.02;letter-spacing:-2px;margin:18px 0}.hero h1 span{background:linear-gradient(90deg,var(--cyan),var(--blue));-webkit-background-clip:text;color:transparent}.lead{font-size:19px;color:var(--muted);max-width:700px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0}.tiny{font-size:12px;color:#8296ab}.offer{background:linear-gradient(150deg,#0d2942,#0b1828);border:1px solid #235176;border-radius:22px;padding:27px;box-shadow:0 25px 80px #0005}.offerTop{display:flex;justify-content:space-between;align-items:center}.offerRate{font-size:56px;line-height:1;font-weight:900;color:var(--green)}.offer ul{padding:0;list-style:none}.offer li{padding:9px 0;border-bottom:1px solid #18344f;color:#c7d5e3}.offer li:last-child{border:0}.tick{color:var(--green);font-weight:900;margin-right:8px}
+section{padding:64px 0}.head{max-width:720px;margin-bottom:26px}.head h2{font-size:34px;line-height:1.1;margin:0 0 8px}.head p{color:var(--muted);margin:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{background:linear-gradient(145deg,rgba(13,32,53,.94),rgba(8,23,39,.96));border:1px solid var(--line);border-radius:18px;padding:22px}.card h3{margin:5px 0 8px}.card p{color:var(--muted);font-size:14px}.icon{width:38px;height:38px;border-radius:11px;background:#102f4b;display:grid;place-items:center;font-weight:900;color:var(--cyan)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:17px;border:1px solid var(--line);border-radius:15px;background:#0a1a2c}.step.active{border-color:var(--green);box-shadow:0 0 0 1px #25d79b33;background:#0b2430}.num{display:inline-grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#17324d;color:#b8cbe0;font-size:13px;font-weight:900}.active .num{background:var(--green);color:#03150f}.step strong{display:block;margin-top:9px;font-size:14px}.step small{color:#7f96ac}
+
+.demoWrap{background:linear-gradient(150deg,#091b2d,#0a1626);border:1px solid #214665;border-radius:24px;overflow:hidden;box-shadow:0 25px 80px #0004}.demoHeader{padding:24px 26px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;align-items:center}.demoTitle{font-size:22px;font-weight:900}.demoBody{padding:26px}.progress{height:8px;background:#12283e;border-radius:99px;overflow:hidden;margin:0 0 25px}.progress span{display:block;height:100%;width:25%;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:.35s}.orderGrid{display:grid;grid-template-columns:1fr 320px;gap:20px}.orderCard{background:#071525;border:1px solid var(--line);border-radius:17px;padding:22px}.orderTag{display:inline-block;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:900;margin-bottom:12px}.buy{background:#0b3a2e;color:#60e7ba}.send{background:#0b3150;color:#65c7ff}.pay{background:#30235c;color:#c2b4ff}.done{background:#153d31;color:#6fe6bc}.orderTitle{font-size:25px;font-weight:900;margin-bottom:5px}.muted{color:var(--muted)}.orderDetails{margin:17px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden}.row{display:flex;justify-content:space-between;gap:15px;padding:11px 13px;border-bottom:1px solid #15304a;font-size:13px}.row:last-child{border:0}.row b{color:#e8f2fb}.success{display:none;padding:14px;border:1px solid #1b7056;background:#0a2a21;border-radius:12px;color:#7cf0c4;margin:15px 0}.success.show{display:block}.earn{background:#081d19;border:1px solid #1c7c61;border-radius:14px;padding:18px;margin-top:15px}.earn .money{font-size:34px;font-weight:950;color:var(--green)}.fakeQR{width:178px;height:178px;margin:15px auto;background:white;display:grid;grid-template-columns:repeat(13,1fr);gap:3px;padding:9px;border-radius:8px}.fakeQR i{background:#071525;border-radius:1px}.fakeQR i:nth-child(3n),.fakeQR i:nth-child(7n+2),.fakeQR i:nth-child(11n){background:white}.qrNote{text-align:center;color:#8fa5ba;font-size:12px}.side{position:sticky;top:92px;height:max-content}.earnings{display:flex;flex-direction:column;gap:10px}.earnLine{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}.earnLine:last-child{border:0}.total{padding:16px;border-radius:14px;background:linear-gradient(135deg,#0c2e28,#0a1d28);border:1px solid #1d7a61;margin-top:12px}.total small{color:#91a8b9}.total b{display:block;font-size:34px;color:var(--green)}.demoDisclaimer{font-size:11px;color:#71869a;margin-top:14px}.demoButtons{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.hidden{display:none!important}
+
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}label{display:block;color:#bac9d8;font-size:13px;margin-bottom:6px}input,select,textarea{width:100%;background:#071525;color:white;border:1px solid var(--line);border-radius:11px;padding:12px 13px;outline:0}input:focus,select:focus,textarea:focus{border-color:var(--cyan)}.notice{padding:13px 15px;border-left:3px solid var(--yellow);background:#211b0c;color:#cbd4de;border-radius:8px;font-size:12px;margin-top:15px}.status{color:#7fdcb9;font-size:13px}
+
+details{background:#0a1a2c;border:1px solid var(--line);border-radius:12px;margin:9px 0;padding:15px}summary{font-weight:800;cursor:pointer}details p{color:var(--muted);font-size:14px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+footer{border-top:1px solid var(--line);padding:35px 0;color:#8499ad;font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){.heroGrid,.orderGrid,.contact{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.side{position:static}.navlinks{display:none}}
+@media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 24px))}.hero{padding-top:45px}.grid3,.grid2,.formGrid{grid-template-columns:1fr}.full{grid-column:auto}.steps{grid-template-columns:1fr}.demoHeader{align-items:flex-start;flex-direction:column}.hero h1{letter-spacing:-1px}.demoBody{padding:15px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#top">Scan<i>SetU</i></a>
+<nav class="navlinks"><a href="#how">How it works</a><a href="#demo">Demo</a><a href="#rewards">Rewards</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn primary" href="#apply">Apply Now</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap heroGrid">
+<div>
+<div class="badge">● LIQUIDITY PROVIDER (LP) PROGRAM</div>
+<h1>Understand the work.<br><span>Try it before you join.</span></h1>
+<p class="lead">Experience a realistic ScanSetU LP order flow in demo mode — receive a buy order, confirm it, complete a send order, scan & pay, and see the commission from each completed demo order.</p>
+<div class="actions"><a class="btn primary" href="#demo">▶ Start LP Demo</a><a class="btn ghost" href="#apply">Become an LP</a></div>
+<p class="tiny">Demo mode uses virtual orders only. No wallet connection, no real payment and no real money is transferred.</p>
+</div>
+<div class="offer">
+<div class="offerTop"><div><div class="tiny">LIMITED-TIME LP OFFER</div><div class="offerRate">2.5%</div><b>promotional commission example</b></div><div style="font-size:42px">⚡</div></div>
+<ul><li><span class="tick">✓</span>Starting liquidity from <b>$150</b></li><li><span class="tick">✓</span>Onboarding rewards*</li><li><span class="tick">✓</span>Monthly performance rewards*</li><li><span class="tick">✓</span>Referral incentives*</li></ul>
+<p class="tiny">*Only according to the live program terms and eligibility conditions.</p>
+</div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<div class="head"><h2>What will an LP actually do?</h2><p>The demo below follows the same concept in a simple guided sequence.</p></div>
+<div class="grid3">
+<div class="card"><div class="icon">1</div><h3>Receive</h3><p>A buy order appears. You check whether the payment/receipt has actually been received, then confirm the order.</p></div>
+<div class="card"><div class="icon">2</div><h3>Send</h3><p>A send order appears. In the live platform this represents sending the required asset according to the order instructions.</p></div>
+<div class="card"><div class="icon">3</div><h3>Scan & Pay</h3><p>A scan-and-pay order appears. In the live platform you would scan the merchant QR and complete the payment according to the instructions.</p></div>
+</div>
+</div></section>
+
+<section id="demo"><div class="wrap">
+<div class="head"><h2>🎮 Interactive LP Demo</h2><p>Complete all three virtual orders. Each successful demo order shows a calculated 2.5% example commission, then the final screen totals your demo earnings.</p></div>
+<div class="demoWrap">
+<div class="demoHeader"><div><div class="demoTitle">ScanSetU LP Order Simulator</div><div class="tiny">DEMO MODE · 3 virtual orders</div></div><span class="badge">2.5% example</span></div>
+<div class="demoBody">
+<div class="progress"><span id="progress"></span></div>
+<div class="steps" style="margin-bottom:24px">
+<div class="step active" id="step1"><span class="num">1</span><strong>Received Buy</strong><small>Confirm receipt</small></div>
+<div class="step" id="step2"><span class="num">2</span><strong>Send Order</strong><small>Send & complete</small></div>
+<div class="step" id="step3"><span class="num">3</span><strong>Scan & Pay</strong><small>Scan & complete</small></div>
+<div class="step" id="step4"><span class="num">✓</span><strong>Demo Complete</strong><small>Total earnings</small></div>
+</div>
+
+<div class="orderGrid">
+<div class="orderCard">
+<!-- ORDER 1 -->
+<div id="order1">
+<span class="orderTag buy">RECEIVED BUY ORDER</span>
+<div class="orderTitle">Buy USDT</div><div class="muted">A virtual buyer has placed an order.</div>
+<div class="orderDetails">
+<div class="row"><span>Order amount</span><b id="o1amount">$200.00</b></div>
+<div class="row"><span>Buyer pays</span><b>₹16,600 (demo)</b></div>
+<div class="row"><span>Payment method</span><b>UPI (demo)</b></div>
+<div class="row"><span>Time limit</span><b>15 min</b></div>
+</div>
+<div class="notice">Check the payment status in a real order before confirming. For this demo, assume the virtual payment has been received.</div>
+<div id="s1" class="success">✓ Payment received. Demo order can now be completed.</div>
+<div class="demoButtons"><button class="btn primary" id="confirmReceived">Confirm Received & Complete</button><button class="btn ghost" id="notReceived">Not Received</button></div>
+</div>
+
+<!-- ORDER 2 -->
+<div id="order2" class="hidden">
+<span class="orderTag send">SEND ORDER</span>
+<div class="orderTitle">Send USDT to Buyer</div><div class="muted">A virtual send instruction has been generated.</div>
+<div class="orderDetails">
+<div class="row"><span>Send amount</span><b id="o2amount">$200.00 USDT</b></div>
+<div class="row"><span>Network</span><b>TRC20 (demo)</b></div>
+<div class="row"><span>Recipient</span><b>TX••••••42x (demo)</b></div>
+<div class="row"><span>Order status</span><b>Ready to send</b></div>
+</div>
+<div class="notice">In the live platform, follow the exact recipient address and network shown by the order. This demo never broadcasts a transaction.</div>
+<div id="s2" class="success">✓ Virtual send completed. Demo order can now be marked complete.</div>
+<div class="demoButtons"><button class="btn primary" id="sendComplete">Send in Demo & Complete</button></div>
+</div>
+
+<!-- ORDER 3 -->
+<div id="order3" class="hidden">
+<span class="orderTag pay">SCAN & PAY ORDER</span>
+<div class="orderTitle">Scan & Pay</div><div class="muted">A virtual merchant payment request is shown below.</div>
+<div class="orderDetails">
+<div class="row"><span>Pay amount</span><b>₹16,600 (demo)</b></div>
+<div class="row"><span>Method</span><b>QR / UPI (demo)</b></div>
+<div class="row"><span>Merchant</span><b>ScanSetU Demo Merchant</b></div>
+</div>
+<div class="fakeQR" id="fakeQR" aria-label="Demo QR code"></div>
+<div class="qrNote">DEMO QR — not connected to a bank, wallet or merchant.</div>
+<div id="s3" class="success">✓ Virtual payment completed.</div>
+<div class="demoButtons"><button class="btn primary" id="payComplete">Scan / Pay in Demo & Complete</button></div>
+</div>
+
+<!-- COMPLETE -->
+<div id="order4" class="hidden">
+<span class="orderTag done">DEMO COMPLETE</span>
+<div class="orderTitle">🎉 You completed the LP demo</div>
+<p class="muted">You have now seen the three order types and how the example commission is calculated after each completed demo order.</p>
+<div class="earn"><div class="tiny">TOTAL DEMO EARNING</div><div class="money" id="finalTotal">$15.00</div><div class="tiny">2.5% example commission across 3 virtual orders</div></div>
+<div class="demoButtons"><button class="btn primary" id="restart">Try Demo Again</button><a class="btn ghost" href="#apply">Apply as LP</a></div>
+</div>
+
+</div>
+
+<aside class="card side">
+<h3>Demo Earnings</h3><div class="tiny">Updated after each completed order</div>
+<div class="earnings">
+<div class="earnLine"><span>Order 1 · Buy</span><b id="earn1">$0.00</b></div>
+<div class="earnLine"><span>Order 2 · Send</span><b id="earn2">$0.00</b></div>
+<div class="earnLine"><span>Order 3 · Scan & Pay</span><b id="earn3">$0.00</b></div>
+</div>
+<div class="total"><small>Total demo commission</small><b id="total">$0.00</b></div>
+<p class="demoDisclaimer">Illustrative demo only. Actual commission depends on live program terms, eligible order volume and successful settlement. It is not a guaranteed return.</p>
+</aside>
+</div>
+</div>
+</div></section>
+
+<section id="rewards"><div class="wrap"><div class="head"><h2>LP rewards & growth</h2><p>Replace the placeholders with the exact approved campaign rules before publishing.</p></div>
+<div class="grid3"><div class="card"><div class="icon">🎁</div><h3>Onboarding Reward</h3><p>Reward qualified new LPs after the required funding and first successful live orders.</p></div><div class="card"><div class="icon">🏆</div><h3>Monthly Performance</h3><p>Reward eligible top performers using transparent volume, completion and quality criteria.</p></div><div class="card"><div class="icon">👥</div><h3>Referral Rewards</h3><p>Give existing LPs a tracked referral incentive when referred users qualify and become active.</p></div></div>
+</div></section>
+
+<section id="apply"><div class="wrap"><div class="head"><h2>Become a ScanSetU LP</h2><p>After understanding the demo, submit your details for onboarding information.</p></div>
+<div class="card"><form id="lpForm"><div class="formGrid">
+<div><label>Full name *</label><input name="name" required placeholder="Your name"></div>
+<div><label>Telegram username *</label><input name="telegram" required placeholder="@username"></div>
+<div><label>Email</label><input type="email" name="email" placeholder="you@example.com"></div>
+<div><label>Country *</label><input name="country" required placeholder="India"></div>
+<div><label>Expected starting liquidity *</label><select name="liquidity" required><option value="">Select</option><option>$150–$499</option><option>$500–$999</option><option>$1,000–$4,999</option><option>$5,000+</option></select></div>
+<div><label>Experience *</label><select name="experience" required><option value="">Select</option><option>New to LP</option><option>Crypto/P2P trader</option><option>Existing merchant/LP</option><option>OTC/business</option></select></div>
+<div class="full"><label>How did you find us?</label><select name="source"><option>Telegram</option><option>X</option><option>Discord</option><option>Referral</option><option>Influencer</option><option>Search</option><option>Other</option></select></div>
+<div class="full"><label>Question / expected volume</label><textarea name="message" rows="4" placeholder="Tell us what you want to know."></textarea></div>
+</div>
+<div class="notice">Application is a request for onboarding information. Do not send funds from this form. Live participation is subject to current terms, eligibility, verification, compliance and applicable law.</div>
+<div class="demoButtons"><button class="btn primary" type="submit">Submit LP Application</button><span id="formStatus" class="status"></span></div>
+</form></div></div></section>
+
+<section id="faq"><div class="wrap"><div class="head"><h2>FAQ</h2></div>
+<details><summary>Do I need $150 for the demo?</summary><p>No. The demo is free and uses only virtual orders.</p></details>
+<details><summary>Does the demo actually send USDT or money?</summary><p>No. Nothing is broadcast or paid. The buttons simulate the live workflow only.</p></details>
+<details><summary>How is the 2.5% demo commission calculated?</summary><p>The demo uses: order amount × 2.5%. For example, a $200 virtual order shows $5.00. The actual live commission must follow the published LP terms.</p></details>
+<details><summary>Is 2.5% guaranteed?</summary><p>No. The promotional rate should be presented only when active and subject to the exact eligibility and transaction rules published by ScanSetU.</p></details>
+<details><summary>What happens after I apply?</summary><p>The real backend should create an LP lead, notify the team and provide the current verification/onboarding instructions.</p></details>
+</div></section>
+
+<section id="contact"><div class="wrap contact"><div><div class="head"><h2>Contact ScanSetU</h2><p>Replace the placeholders below with your official support channels.</p></div><div class="card"><p><b>Telegram:</b> @YOUR_OFFICIAL_TELEGRAM</p><p><b>Email:</b> support@YOUR-DOMAIN</p><p><b>Website:</b> scansetu.co</p></div></div><div class="card"><h3>Important</h3><p>Use only official ScanSetU channels for onboarding and funding. Publish the final LP agreement, fee schedule, privacy notice, KYC/AML process, withdrawal rules and risk disclosures before taking real LP deposits.</p></div></div></section>
+</main>
+<footer><div class="wrap foot"><div>© ScanSetU · LP Program</div><div>Trade · Pay · Grow</div><div><a href="#faq">FAQ</a> · <a href="#contact">Contact</a> · <a href="#apply">Apply</a></div></div></footer>
+
+<script>
+(() => {
+  "use strict";
+
+  const RATE = 0.025;
+  const ORDER_AMOUNTS = [200, 200, 200];
+  const earnings = [0,0,0];
+  let current = 1;
+
+  const $ = id => document.getElementById(id);
+  const money = n => "$" + n.toFixed(2);
+
+  function updateEarnings() {
+    $("earn1").textContent = money(earnings[0]);
+    $("earn2").textContent = money(earnings[1]);
+    $("earn3").textContent = money(earnings[2]);
+    $("total").textContent = money(earnings.reduce((a,b)=>a+b,0));
+    $("finalTotal").textContent = money(earnings.reduce((a,b)=>a+b,0));
+  }
+
+  function setStep(n) {
+    current = n;
+    ["1","2","3","4"].forEach(i => $("step"+i).classList.toggle("active", Number(i) <= n));
+    $("progress").style.width = (n === 4 ? 100 : n * 25) + "%";
+  }
+
+  function showOnly(id) {
+    ["order1","order2","order3","order4"].forEach(x => $(x).classList.add("hidden"));
+    $(id).classList.remove("hidden");
+  }
+
+  function credit(index) {
+    earnings[index] = ORDER_AMOUNTS[index] * RATE;
+    updateEarnings();
+  }
+
+  $("confirmReceived").addEventListener("click", () => {
+    $("s1").classList.add("show");
+    credit(0);
+    setStep(2);
+    setTimeout(() => showOnly("order2"), 350);
+  });
+
+  $("notReceived").addEventListener("click", () => {
+    alert("Demo only: this path does not continue. In a real order, never confirm a payment you have not actually received.");
+  });
+
+  $("sendComplete").addEventListener("click", () => {
+    $("s2").classList.add("show");
+    credit(1);
+    setStep(3);
+    setTimeout(() => showOnly("order3"), 350);
+  });
+
+  $("payComplete").addEventListener("click", () => {
+    $("s3").classList.add("show");
+    credit(2);
+    setStep(4);
+    setTimeout(() => showOnly("order4"), 350);
+  });
+
+  $("restart").addEventListener("click", () => {
+    earnings[0]=earnings[1]=earnings[2]=0;
+    updateEarnings();
+    $("s1").classList.remove("show");
+    $("s2").classList.remove("show");
+    $("s3").classList.remove("show");
+    setStep(1);
+    showOnly("order1");
+    document.getElementById("demo").scrollIntoView({behavior:"smooth"});
+  });
+
+  // Deterministic visual-only QR. It is intentionally NOT a real payment QR.
+  const qr = $("fakeQR");
+  for(let i=0;i<169;i++){
+    const cell=document.createElement("i");
+    cell.style.background = ((i*17 + i*i*7 + 13) % 19 < 8) ? "#071525" : "#fff";
+    qr.appendChild(cell);
+  }
+
+  $("lpForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    localStorage.setItem("scansetu_lp_demo_lead", JSON.stringify({...data,submittedAt:new Date().toISOString()}));
+    $("formStatus").textContent = "Demo capture successful. Connect this form to your real CRM/backend before launch.";
+    e.target.reset();
+  });
+
+  updateEarnings();
+})();
+</script>
+</body>
+</html>
