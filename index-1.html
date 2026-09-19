@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ScanSetU | Liquidity Partner Program</title>
+<meta name="description" content="Become a ScanSetU liquidity partner. Learn the order flow, commission model and onboarding process through an interactive experience.">
+<style>
+:root{
+--ink:#07111f;--ink2:#0b1727;--panel:#0e1e31;--panel2:#122842;--line:#1d3b59;
+--white:#f3f8fd;--muted:#98adbf;--blue:#2491ff;--cyan:#35d9ff;--green:#28d49a;
+--purple:#8c6cff;--amber:#f4bf55;--red:#ff7373;--max:1180px
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(900px 500px at 78% -10%,#133b62 0%,transparent 65%),linear-gradient(180deg,#06111e,#081525 60%,#06101b);color:var(--white);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 34px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:#06111edc;border-bottom:1px solid #ffffff0d;backdrop-filter:blur(18px)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:23px;font-weight:900;letter-spacing:-.6px}.logo span{color:var(--cyan)}
+.navlinks{display:flex;gap:23px;color:#aec0d1;font-size:13px}.navlinks a:hover{color:#fff}
+.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:850;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.18s}
+.btn:hover{transform:translateY(-1px)}.primary{color:#02111c;background:linear-gradient(135deg,#238cff,#38d6ff)}.ghost{color:#fff;background:#0d2137;border:1px solid #244765}
+.hero{padding:74px 0 52px}.heroGrid{display:grid;grid-template-columns:1.06fr .94fr;gap:48px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid #2ad69b44;background:#18c99010;color:#6ce7bc;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:850}
+h1{font-size:clamp(42px,6vw,70px);line-height:1.01;letter-spacing:-2.7px;margin:18px 0 15px}h1 span{background:linear-gradient(90deg,#35d9ff,#398fff);-webkit-background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--muted);max-width:690px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}.tiny{font-size:11px;color:#8198ad}
+.offer{border:1px solid #245273;background:linear-gradient(145deg,#102a44,#091827);border-radius:22px;padding:26px;box-shadow:0 25px 70px #0005}
+.offerHead{display:flex;justify-content:space-between;gap:20px}.rate{font-size:57px;font-weight:950;line-height:.95;color:var(--green)}.offer ul{list-style:none;padding:0;margin:22px 0 0}.offer li{padding:9px 0;border-bottom:1px solid #17344e;color:#c8d6e3}.offer li:last-child{border:0}.tick{color:var(--green);font-weight:900;margin-right:8px}
+section{padding:62px 0}.head{max-width:720px;margin-bottom:26px}.head h2{font-size:34px;line-height:1.12;margin:0 0 7px}.head p{color:var(--muted);margin:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,#0e2034,#091827);border:1px solid var(--line);border-radius:18px;padding:21px}.card h3{margin:7px 0}.card p{color:var(--muted);font-size:14px}.icon{width:39px;height:39px;border-radius:12px;background:#12304b;display:grid;place-items:center;color:var(--cyan);font-weight:900}
+.demoShell{background:linear-gradient(145deg,#0c1c2e,#081523);border:1px solid #214762;border-radius:24px;overflow:hidden;box-shadow:0 25px 90px #0005}
+.demoTop{padding:22px 25px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:center}.demoTop h3{margin:0;font-size:21px}.statusPill{font-size:11px;padding:6px 9px;border-radius:999px;background:#112941;border:1px solid #234663;color:#9eb5c9}
+.demoMain{padding:24px}.tracker{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}.track{padding:13px 14px;background:#091a2c;border:1px solid #193651;border-radius:13px;color:#8198ad}.track.active{border-color:#2ad49a88;background:#0b2926;color:#d8f8ec}.track b{display:block;color:inherit;font-size:13px}.track small{font-size:11px}
+.progress{height:7px;background:#11263b;border-radius:99px;overflow:hidden;margin-bottom:22px}.progress span{display:block;width:25%;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:.35s}
+.demoGrid{display:grid;grid-template-columns:1fr 305px;gap:18px}.order{background:#071523;border:1px solid #1a3954;border-radius:18px;padding:22px;min-height:410px}.orderType{display:inline-flex;padding:6px 9px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.3px}.buy{background:#0b392e;color:#67e8bc}.send{background:#0a3151;color:#68c9ff}.pay{background:#31265d;color:#c5b8ff}.finish{background:#123c31;color:#75eac1}
+.order h3{font-size:26px;margin:10px 0 3px}.muted{color:var(--muted)}.orderId{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#91a8bd;font-size:12px}
+.details{border:1px solid #18364f;border-radius:12px;overflow:hidden;margin:18px 0}.row{display:flex;justify-content:space-between;gap:18px;padding:10px 12px;border-bottom:1px solid #14304a;font-size:13px}.row:last-child{border:0}.row b{color:#eaf3fb}
+.notice{display:none;align-items:center;gap:9px;padding:10px 12px;border:1px solid #1e755d;background:#0b2921;color:#78e7c2;border-radius:11px;font-size:12px;margin:12px 0}.notice.show{display:flex}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px #28d49a}
+.slide{margin-top:20px;border:1px solid #2a4b67;border-radius:13px;background:#0a1b2d;padding:5px;display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none}.slide.disabled{opacity:.55;pointer-events:none}.slideKnob{width:48px;height:42px;border-radius:10px;background:linear-gradient(135deg,#238cff,#37d8ff);display:grid;place-items:center;color:#03111b;font-size:20px;font-weight:900;transition:.3s}.slideText{flex:1;text-align:center;font-size:13px;font-weight:850;color:#b7c9d9}.slide.success .slideKnob{background:var(--green);transform:translateX(calc(100% + 8px))}.slide.success .slideText{color:#72e7bf}
+.payBox{text-align:center;border:1px solid #203c5c;border-radius:14px;background:#081a2b;padding:15px;margin-top:16px}.qr{width:176px;height:176px;background:#fff;margin:12px auto;border-radius:8px;padding:8px;display:grid;grid-template-columns:repeat(21,1fr);gap:2px}.qr span{background:#06111d}.qr span.w{background:#fff}.qrNote{font-size:11px;color:#8197aa}.payStatus{min-height:48px}
+.side{background:#091a2b;border:1px solid #1b3a56;border-radius:17px;padding:19px;height:max-content}.side h3{margin:0}.line{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #17334d;font-size:13px}.line:last-child{border:0}.total{margin-top:12px;padding:16px;border:1px solid #23755e;background:#09241e;border-radius:14px}.total small{color:#91aa9f}.total b{display:block;font-size:34px;color:var(--green)}.walletBtn{width:100%;margin-top:10px}
+.hidden{display:none!important}
+.withdraw{border:1px solid #2a4c69;border-radius:13px;padding:13px;margin-top:12px;background:#0a1b2d}.withdraw input{margin:7px 0}.withdraw button{width:100%}
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}label{display:block;font-size:12px;color:#b9c8d7;margin-bottom:6px}input,select,textarea{width:100%;background:#071523;color:white;border:1px solid #1c3b58;border-radius:10px;padding:12px;outline:0}input:focus,select:focus,textarea:focus{border-color:var(--cyan)}.full{grid-column:1/-1}.connect{text-align:center;color:#91a7bb;margin-top:14px}.social{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:15px}.social a{padding:8px 11px;border:1px solid #203f5b;background:#0b1d30;border-radius:10px;font-size:12px;color:#c8d5e1}
+details{background:#0a1a2b;border:1px solid #1b3954;border-radius:12px;padding:14px 16px;margin:9px 0}summary{font-weight:800;cursor:pointer}details p{color:var(--muted);font-size:14px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#8298ac;font-size:12px}footer{border-top:1px solid #ffffff0b;padding:34px 0 42px}
+@media(max-width:900px){.heroGrid,.demoGrid{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.side{position:static}.navlinks{display:none}}
+@media(max-width:650px){.wrap{width:calc(100% - 24px)}.hero{padding-top:46px}.grid3,.formGrid{grid-template-columns:1fr}.full{grid-column:auto}.tracker{grid-template-columns:1fr 1fr}.demoMain{padding:14px}.order{padding:17px}.demoTop{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#top">Scan<span>SetU</span></a>
+<nav class="navlinks"><a href="#how">How it works</a><a href="#demo">LP Program</a><a href="#rewards">Rewards</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<a class="btn primary" href="#apply">Become an LP</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap heroGrid">
+<div>
+<div class="badge">● LIQUIDITY PARTNER PROGRAM</div>
+<h1>Turn your liquidity<br>into <span>settlement income.</span></h1>
+<p class="lead">ScanSetU connects verified liquidity partners with the local-currency side of QR and USDT transactions. Learn the exact order flow first, then apply to join the partner network.</p>
+<div class="actions"><a class="btn primary" href="#demo">Start the LP experience →</a><a class="btn ghost" href="#how">How it works</a></div>
+<p class="tiny">Current promotional partner commission: <b style="color:#bcefe0">2.5%*</b> · Starting liquidity from $150*</p>
+</div>
+<div class="offer">
+<div class="tiny">CURRENT PARTNER OFFER</div><div class="offerHead"><div><div class="rate">2.5%</div><b>commission on eligible settled transactions*</b></div><div style="font-size:40px">↗</div></div>
+<ul><li><span class="tick">✓</span>Start from <b>$150</b> liquidity*</li><li><span class="tick">✓</span>Onboarding incentives*</li><li><span class="tick">✓</span>Monthly performance rewards*</li><li><span class="tick">✓</span>Referral incentives*</li></ul>
+<div class="tiny">*Subject to the live partner terms, eligibility and transaction conditions.</div>
+</div>
+</div></section>
+
+<section id="how"><div class="wrap"><div class="head"><h2>How the partner flow works</h2><p>The experience is built around three common order types.</p></div>
+<div class="grid3">
+<div class="card"><div class="icon">01</div><h3>Receive / Buy</h3><p>A buy order arrives with an order ID and amount. You verify the incoming payment, then slide to confirm once it is actually received.</p></div>
+<div class="card"><div class="icon">02</div><h3>Send</h3><p>A send order shows the order ID and the required QR or UPI ID. Follow the displayed payment instruction and slide to confirm after completion.</p></div>
+<div class="card"><div class="icon">03</div><h3>Scan & Pay</h3><p>A merchant QR appears with the order details. After the scan and payment confirmation, the status updates and you complete the order.</p></div>
+</div></div></section>
+
+<section id="demo"><div class="wrap"><div class="head"><h2>Experience the LP order flow</h2><p>Complete the three order steps below. The interface is a safe interactive preview; it never broadcasts a blockchain transaction or moves real funds.</p></div>
+<div class="demoShell">
+<div class="demoTop"><div><h3>Liquidity Partner Desk</h3><div class="tiny">Order queue · Partner view</div></div><span class="statusPill">Interactive preview</span></div>
+<div class="demoMain">
+<div class="tracker">
+<div class="track active" id="t1"><b>1 · Received Buy</b><small>Verify receipt</small></div>
+<div class="track" id="t2"><b>2 · Send</b><small>Complete payment</small></div>
+<div class="track" id="t3"><b>3 · Scan & Pay</b><small>Complete payment</small></div>
+<div class="track" id="t4"><b>4 · Earnings</b><small>Withdraw</small></div>
+</div>
+<div class="progress"><span id="bar"></span></div>
+
+<div class="demoGrid">
+<div class="order">
+<!-- BUY -->
+<div id="buy">
+<span class="orderType buy">RECEIVED BUY ORDER</span>
+<h3>Payment received</h3><div class="muted">A buyer payment has arrived for this order.</div>
+<div class="details">
+<div class="row"><span>Order ID</span><b>#BUY-84X2</b></div>
+<div class="row"><span>Amount received</span><b>$200.00</b></div>
+<div class="row"><span>Payment rail</span><b>UPI · verified</b></div>
+<div class="row"><span>Status</span><b style="color:#67e8bc">Payment received</b></div>
+</div>
+<div class="notice" id="buyNotice"><span class="dot"></span><span>You received <b>$200.00</b> for order <b>#BUY-84X2</b>.</span></div>
+<div class="slide" id="buySlide"><div class="slideKnob">›</div><div class="slideText">Slide to confirm received</div></div>
+</div>
+
+<!-- SEND -->
+<div id="send" class="hidden">
+<span class="orderType send">SEND ORDER</span>
+<h3>Send USDT</h3><div class="muted">Follow the order's payment instruction. No address is displayed here.</div>
+<div class="details">
+<div class="row"><span>Order ID</span><b>#SND-51K7</b></div>
+<div class="row"><span>Send amount</span><b>200.00 USDT</b></div>
+<div class="row"><span>Payment method</span><b>QR / UPI</b></div>
+<div class="row"><span>Network</span><b>TRC20</b></div>
+</div>
+<div class="payBox">
+<div class="tiny">PAYMENT REQUEST</div>
+<div style="font-size:22px;font-weight:900;margin-top:4px">200.00 USDT</div>
+<div class="tiny">QR / UPI payment instruction</div>
+<div class="notice" id="sendNotice"><span class="dot"></span><span>Payment sent successfully. Order is ready for confirmation.</span></div>
+</div>
+<div class="slide" id="sendSlide"><div class="slideKnob">›</div><div class="slideText">Slide to confirm order</div></div>
+</div>
+
+<!-- PAY -->
+<div id="pay" class="hidden">
+<span class="orderType pay">SCAN & PAY ORDER</span>
+<h3>Scan merchant QR</h3><div class="muted">Scan the merchant request and complete the payment.</div>
+<div class="details">
+<div class="row"><span>Order ID</span><b>#PAY-73M4</b></div>
+<div class="row"><span>Merchant</span><b>ScanSetU Merchant</b></div>
+<div class="row"><span>Amount</span><b>₹16,600</b></div>
+<div class="row"><span>Payment</span><b>QR</b></div>
+</div>
+<div class="payBox">
+<div class="tiny">MERCHANT QR</div>
+<div class="qr" id="qr"></div>
+<div class="qrNote">Secure payment request · Scan to continue</div>
+<div class="notice" id="scanNotice"><span class="dot"></span><span>Scan successful.</span></div>
+<div class="notice" id="paidNotice"><span class="dot"></span><span>Payment successful. Merchant settlement confirmed.</span></div>
+</div>
+<div class="slide disabled" id="paySlide"><div class="slideKnob">›</div><div class="slideText">Slide to confirm order</div></div>
+</div>
+
+<!-- DONE -->
+<div id="done" class="hidden">
+<span class="orderType finish">PARTNER SESSION COMPLETE</span>
+<h3>You completed the order flow</h3><p class="muted">The three order types have been completed successfully.</p>
+<div class="details">
+<div class="row"><span>#BUY-84X2 · Received Buy</span><b>$5.00</b></div>
+<div class="row"><span>#SND-51K7 · Send</span><b>$5.00</b></div>
+<div class="row"><span>#PAY-73M4 · Scan & Pay</span><b>$5.00</b></div>
+</div>
+<div class="total"><small>Total example commission</small><b>$15.00</b><div class="tiny">Calculated at 2.5% × $200 × 3 eligible example orders.</div></div>
+<div class="withdraw">
+<b>Withdraw to a wallet</b><div class="tiny">Enter a wallet address in the real partner dashboard.</div>
+<input placeholder="Wallet address (example only)" id="wallet">
+<button class="btn primary" id="withdraw">Withdraw example earnings</button>
+<div class="tiny" id="withdrawStatus" style="margin-top:8px"></div>
+</div>
+<div class="actions"><button class="btn ghost" id="again">Run experience again</button><a class="btn primary" href="#apply">Apply to become an LP</a></div>
+</div>
+</div>
+
+<aside class="side">
+<h3>Partner earnings</h3><div class="tiny">Updated after each completed order</div>
+<div class="line"><span>#BUY-84X2</span><b id="e1">$0.00</b></div>
+<div class="line"><span>#SND-51K7</span><b id="e2">$0.00</b></div>
+<div class="line"><span>#PAY-73M4</span><b id="e3">$0.00</b></div>
+<div class="total"><small>Example total</small><b id="total">$0.00</b><div class="tiny">2.5% example rate</div></div>
+<p class="tiny" style="margin-top:14px">Actual partner commission is governed by the current ScanSetU partner terms and eligible settlement conditions.</p>
+</aside>
+</div>
+</div></div></section>
+
+<section id="rewards"><div class="wrap"><div class="head"><h2>Partner rewards</h2><p>Additional incentives can be offered alongside transaction commissions.</p></div>
+<div class="grid3">
+<div class="card"><div class="icon">🎁</div><h3>Onboarding</h3><p>Qualified new partners can receive an onboarding incentive after meeting the published activation requirements.</p></div>
+<div class="card"><div class="icon">🏆</div><h3>Monthly performance</h3><p>Performance rewards can recognise eligible partners based on transparent settlement activity and quality metrics.</p></div>
+<div class="card"><div class="icon">👥</div><h3>Referral</h3><p>Invite qualified liquidity partners through a tracked referral link and receive the applicable referral reward.</p></div>
+</div></div></section>
+
+<section id="apply"><div class="wrap"><div class="head"><h2>Ready to join the partner network?</h2><p>Leave only the essentials. The ScanSetU team will contact you with onboarding details.</p></div>
+<div class="card">
+<form id="applyForm"><div class="formGrid">
+<div><label>Name</label><input name="name" required placeholder="Your name"></div>
+<div><label>Telegram ID</label><input name="telegram" required placeholder="@username"></div>
+<div class="full"><label>Email</label><input type="email" name="email" required placeholder="you@example.com"></div>
+</div>
+<div class="actions"><button class="btn primary" type="submit">Apply as Liquidity Partner →</button></div>
+<div class="connect" id="formStatus">Submit your details and our team will connect with you.</div>
+</form>
+<div class="social">
+<a href="https://t.me/scansetuapp" target="_blank" rel="noopener">Telegram · @scansetuapp</a>
+<a href="https://x.com/scansetupay" target="_blank" rel="noopener">X · @scansetupay</a>
+<a href="https://instagram.com/scansetupay" target="_blank" rel="noopener">Instagram · @scansetupay</a>
+</div>
+</div></div></section>
+
+<section id="faq"><div class="wrap"><div class="head"><h2>Partner FAQ</h2></div>
+<details><summary>How much liquidity do I need?</summary><p>The current recruitment offer starts from $150, subject to the live partner terms and eligibility requirements.</p></details>
+<details><summary>How does commission work?</summary><p>The promotional example on this page uses 2.5% of the eligible order amount. Actual commission is calculated according to the current partner terms and successful settlement conditions.</p></details>
+<details><summary>Does the experience move real money?</summary><p>No. The interactive experience is a safe preview. It does not connect to a wallet, send USDT, or process a bank/UPI payment.</p></details>
+<details><summary>What should I check before confirming a real order?</summary><p>Verify the actual payment/order status, order ID, amount, payment method and the exact instructions displayed by the live platform. Never confirm an order based only on a screenshot or notification.</p></details>
+<details><summary>Will ScanSetU ask for my seed phrase?</summary><p>No. ScanSetU's public security information says it does not ask for seed phrases, private keys or wallet login details.</p></details>
+</div></section>
+
+<section id="contact"><div class="wrap"><div class="card" style="text-align:center"><div class="head" style="margin:0 auto 15px"><h2>Talk to the ScanSetU team</h2><p>Questions about liquidity, settlement or onboarding? Connect through the official channels.</p></div><div class="social"><a href="https://t.me/scansetuapp" target="_blank" rel="noopener">Telegram Community</a><a href="https://x.com/scansetupay" target="_blank" rel="noopener">X</a><a href="https://instagram.com/scansetupay" target="_blank" rel="noopener">Instagram</a><a href="https://scansetu.co/" target="_blank" rel="noopener">ScanSetU Website</a></div></div></div></section>
+</main>
+
+<footer><div class="wrap foot"><div>© 2026 ScanSetU</div><div>Liquidity Partner Program · Trade · Pay · Grow</div><div>Self-custody · On-chain proof · Transparent terms</div></div></footer>
+
+<script>
+(() => {
+"use strict";
+const RATE=0.025, AMOUNT=200;
+const earn=[0,0,0];
+const $=id=>document.getElementById(id);
+const money=n=>"$"+n.toFixed(2);
+
+function update(){
+  $("e1").textContent=money(earn[0]);$("e2").textContent=money(earn[1]);$("e3").textContent=money(earn[2]);
+  $("total").textContent=money(earn.reduce((a,b)=>a+b,0));
+}
+function track(n){
+  for(let i=1;i<=4;i++)$("t"+i).classList.toggle("active",i<=n);
+  $("bar").style.width=(n*25)+"%";
+}
+function only(id){
+  ["buy","send","pay","done"].forEach(x=>$(x).classList.add("hidden"));
+  $(id).classList.remove("hidden");
+}
+function slide(el,fn){
+  if(el.classList.contains("success"))return;
+  el.classList.add("success");
+  setTimeout(fn,450);
+}
+$("buySlide").onclick=()=>{
+  slide($("buySlide"),()=>{
+    $("buyNotice").classList.add("show");
+    earn[0]=AMOUNT*RATE;update();track(2);only("send");
+  });
+};
+$("sendSlide").onclick=()=>{
+  slide($("sendSlide"),()=>{
+    $("sendNotice").classList.add("show");
+    earn[1]=AMOUNT*RATE;update();track(3);only("pay");
+  });
+};
+
+// Build a realistic-looking but intentionally non-functional QR visual.
+const qr=$("qr");
+const size=21;
+function finder(x,y){
+  for(let r=0;r<7;r++)for(let c=0;c<7;c++){
+    const edge=r===0||r===6||c===0||c===6, inner=r>=2&&r<=4&&c>=2&&c<=4;
+    if(edge||inner) cells[y+r][x+c]=1;
+  }
+}
+const cells=Array.from({length:size},()=>Array(size).fill(0));
+finder(0,0);finder(14,0);finder(0,14);
+for(let r=0;r<size;r++)for(let c=0;c<size;c++){
+  if(cells[r][c]===1)continue;
+  const v=(r*37+c*19+r*c*7+11)%23;
+  cells[r][c]=v<9?1:0;
+}
+for(let r=0;r<size;r++)for(let c=0;c<size;c++){
+  const s=document.createElement("span");
+  if(!cells[r][c])s.className="w";
+  qr.appendChild(s);
+}
+setTimeout(()=>{
+  $("scanNotice").classList.add("show");
+  setTimeout(()=>{$("paidNotice").classList.add("show");$("paySlide").classList.remove("disabled")},900);
+},999999); // only after user clicks the demo scan button below
+
+$("paySlide").onclick=()=>{
+  if($("paySlide").classList.contains("disabled"))return;
+  slide($("paySlide"),()=>{
+    earn[2]=AMOUNT*RATE;update();track(4);only("done");
+  });
+};
+
+// Make QR click simulate scan success, then payment success.
+qr.addEventListener("click",()=>{
+  $("scanNotice").classList.add("show");
+  setTimeout(()=>{$("paidNotice").classList.add("show");$("paySlide").classList.remove("disabled")},700);
+});
+
+$("again").onclick=()=>{
+  earn[0]=earn[1]=earn[2]=0;update();
+  ["buySlide","sendSlide","paySlide"].forEach(id=>$(id).classList.remove("success"));
+  $("buyNotice").classList.remove("show");$("sendNotice").classList.remove("show");
+  $("scanNotice").classList.remove("show");$("paidNotice").classList.remove("show");
+  $("paySlide").classList.add("disabled");
+  track(1);only("buy");document.getElementById("demo").scrollIntoView({behavior:"smooth"});
+};
+$("withdraw").onclick=()=>{
+  const v=$("wallet").value.trim();
+  $("withdrawStatus").textContent=v ? "Example withdrawal request prepared. No real funds are moved in this experience." : "Enter a wallet address to preview the withdrawal step.";
+};
+
+$("applyForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const d=Object.fromEntries(new FormData(e.target).entries());
+  localStorage.setItem("scansetu_lp_application",JSON.stringify({...d,createdAt:new Date().toISOString()}));
+  $("formStatus").textContent="Thanks — your details are captured in this preview. The real site should send this application to the ScanSetU backend/CRM.";
+  e.target.reset();
+});
+update();
+})();
+</script>
+</body>
+</html>
